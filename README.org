@@ -1,0 +1,10 @@
+* Dotfiles
+** Emacs
+My Emacs configuration, uses Evil mode and a bunch of custom shortcuts.
+
+Code is formatted with `pp-buffer` and then `untabify`
+
+** NixOS
+NixOS defines 2 hosts: `thinkpad` and `windows`, for NixOS and WSL respectively.
+
+Code is formatted with [[https://github.com/kamadorueda/alejandra][Alejandra]]
