@@ -1,0 +1,14 @@
+#Ignore everything
+*
+
+!.gitignore
+!*.nix
+!*.lock
+!*h
+!LICENSE
+
+!*.yml
+!*.yaml
+
+# ...even if they are in subdirectories
+!*/
