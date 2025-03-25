@@ -49,7 +49,6 @@
     ./home_modules/starship.nix
     ./home_modules/wofi.nix
     ./home_modules/mako.nix
-    ./emacs.nix
     ./home_modules/librewolf.nix
   ];
 

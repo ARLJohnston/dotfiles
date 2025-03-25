@@ -13,17 +13,14 @@
         treesit-grammars.with-all-grammars
       ]);
 in {
-  home.packages = with pkgs; [
+  environment.systemPackages = with pkgs; [
     nixd
 
     my-emacs
     python312
-    (hunspellWithDicts [hunspellDicts.en_GB-ise])
+    hunspell
+    hunspellDicts.en_GB-ise
   ];
-
-  home.file = {
-    ".config/enchant/hunspell/".source = "${pkgs.hunspellDicts.en_GB-ize}/share/hunspell/";
-  };
 
   nixpkgs.overlays = [(import inputs.emacs-overlay)];
 }
