@@ -6,6 +6,7 @@
 !README.org
 
 !hooks/*
+!.github/workflows/*.yml
 
 # ...even if they are in subdirectories
 !*/
