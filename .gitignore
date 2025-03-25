@@ -1,0 +1,10 @@
+#Ignore everything
+*
+
+!.gitignore
+!LICENSE
+
+!hooks
+
+# ...even if they are in subdirectories
+!*/
