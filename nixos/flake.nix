@@ -45,7 +45,11 @@
           inherit inputs system;
           overlays = import ./overlays;
         };
-        modules = [./nixos/configuration.nix ./modules];
+        modules = [
+          {nixpkgs.hostPlatform = "x86_64-linux";}
+          ./nixos/configuration.nix
+          ./modules
+        ];
       };
       windows = nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -57,6 +61,7 @@
           {
             system.stateVersion = "25.05";
             wsl.enable = true;
+            nixpkgs.hostPlatform = "x86_64-linux";
           }
           ./modules
           ./hosts/wsl.nix
@@ -73,7 +78,7 @@
     };
 
     devShells.${system}.default = pkgs.mkShell {
-      nativeBuildInputs = with pkgs; [nixpkgs-fmt nixfmt nixd];
+      nativeBuildInputs = with pkgs; [alejandra nixd];
     };
   };
 }
