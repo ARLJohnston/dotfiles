@@ -14,11 +14,21 @@
   pipewire.enable = true;
   boot-config.enable = true;
   powersave.enable = true;
-  dwl-desktop.enable = true;
   git.enable = true;
 
   time.timeZone = "Europe/Dublin";
   console.keyMap = "uk";
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd sway";
+        user = "greeter";
+      };
+    };
+  };
+  security.pam.services.swaylock = {};
 
   services.logind = {
     extraConfig = "HandlePowerKey=suspend";
@@ -56,6 +66,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    alejandra
     curl
     inkscape
     libnotify

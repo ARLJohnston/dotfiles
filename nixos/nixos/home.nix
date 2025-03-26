@@ -50,6 +50,7 @@
     ./home_modules/wofi.nix
     ./home_modules/mako.nix
     ./home_modules/librewolf.nix
+    ./home_modules/sway.nix
   ];
 
   home.packages = with pkgs; [
