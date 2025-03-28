@@ -65,7 +65,7 @@
           }
           ./modules
           ./hosts/wsl.nix
-			    ./nixos/emacs.nix
+          ./nixos/emacs.nix
         ];
       };
     };
