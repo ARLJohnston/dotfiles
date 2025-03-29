@@ -454,6 +454,8 @@
   :ensure t)
 
 (use-package disproject
+  :custom
+  (disproject-shell-command 'eat-project)
   :general
   (rune/leader-keys
     "p" 'disproject-dispatch)
