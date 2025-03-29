@@ -16,7 +16,7 @@
       user = {
         isDefault = true;
 
-        extensions = with inputs.firefox-addons.packages."x86_64-linux"; [
+        extensions.packages = with inputs.firefox-addons.packages."x86_64-linux"; [
           keepassxc-browser
           auto-tab-discard
           sidebery
@@ -26,7 +26,7 @@
         ];
 
         search = {
-          default = "DuckDuckGo";
+          default = "ddg";
           force = true;
         };
 
@@ -38,6 +38,19 @@
               }
             ];
             definedAliases = ["@s"];
+          };
+
+          "Go" = {
+            urls = [
+              {
+                template = "https://pkg.go.dev/search?q={searchTerms}";
+              }
+            ];
+            definedAliases = ["@g"];
+            icon = builtins.fetchurl {
+              url = "https://pkg.go.dev/static/shared/icon/favicon.ico";
+              sha256 = "sha256:04pwfxbifdk2jf58q3r3dcpla4ngj88m6vy1xq2x4dblklk826fc";
+            };
           };
 
           "Kubernetes" = {
@@ -65,7 +78,10 @@
                 ];
               }
             ];
-            icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            icon = builtins.fetchurl {
+              url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/33856d7837cb8ba76c4fc9e26f91a659066ee31f/logo/nix-snowflake-colours.svg";
+              sha256 = "sha256:1cifj774r4z4m856fva1mamnpnhsjl44kw3asklrc57824f5lyz3";
+            };
             definedAliases = ["@hm"];
           };
           "Nix Packages" = {
@@ -84,7 +100,11 @@
                 ];
               }
             ];
-            icon = "''${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            icon = builtins.fetchurl {
+              url = "https://raw.githubusercontent.com/NixOS/nixos-artwork/33856d7837cb8ba76c4fc9e26f91a659066ee31f/logo/nix-snowflake-colours.svg";
+              sha256 = "sha256:1cifj774r4z4m856fva1mamnpnhsjl44kw3asklrc57824f5lyz3";
+            };
+
             definedAliases = ["@np"];
           };
         };
