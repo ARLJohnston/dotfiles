@@ -33,6 +33,20 @@
     };
   };
 
+  fonts = {
+    packages = with pkgs; [
+      emacs-all-the-icons-fonts
+      fira-code
+    ];
+
+    fontconfig = {
+      enable = true;
+      defaultFonts = {
+        monospace = ["Fira Code"];
+      };
+    };
+  };
+
   nix = {
     settings = {
       allowed-users = ["@wheel"];
