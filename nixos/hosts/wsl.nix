@@ -24,6 +24,11 @@
     nix-direnv.enable = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    alejandra
+    keepassxc
+  ];
+
   virtualisation = {
     containers.enable = true;
     docker = {
