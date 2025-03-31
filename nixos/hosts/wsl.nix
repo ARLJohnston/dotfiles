@@ -9,7 +9,7 @@
 
   wsl = {
     enable = true;
-    defaultUser = "nixos";
+    defaultUser = "Alistair";
     startMenuLaunchers = true;
     useWindowsDriver = true;
     docker-desktop.enable = true;
@@ -18,10 +18,11 @@
     };
   };
 
-  environment.systemPackages = with pkgs; [
-    ghostty
-    direnv
-  ];
+  programs.direnv = {
+    enable = true;
+    silent = true;
+    nix-direnv.enable = true;
+  };
 
   virtualisation = {
     containers.enable = true;
