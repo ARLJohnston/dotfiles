@@ -9,4 +9,5 @@
 !.github/workflows/*.yml
 
 # ...even if they are in subdirectories
-!*/
+!nixos/*/
+!.config/*/
